@@ -35,8 +35,8 @@
 
 ## 💻 Descrição do projeto 
 
-<p align="justify">
-  Projeto realizado na NLW_6 da trilla de Flutter pela equipe do rocketseat
+<p align="justify">  
+  Projeto realizado em Flutter, referente a um PomoDoro(gerenciamento de tempo) utilizando a gerencia de estados MOBx - Null Safety.
 </p>
 
 ---
@@ -44,6 +44,8 @@
 ## ⚙️ Funcionalidades
 
 :heavy_check_mark: PomoDoro - Gerenciamento de tempo 
+
+:heavy_check_mark: Gerencia de estados MOBx 
   
 ---
 
