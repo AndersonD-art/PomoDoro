@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pomodoro/store/pomodoro_store.dart';
+import 'package:provider/provider.dart';
 
 class InputTime extends StatelessWidget {
   final int value;
@@ -15,6 +17,7 @@ class InputTime extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final store = Provider.of<PomodoroStore>(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -35,9 +38,10 @@ class InputTime extends StatelessWidget {
                 color: Colors.white,
               ),
               style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(10),
-                  primary: Colors.red),
+                shape: CircleBorder(),
+                padding: EdgeInsets.all(10),
+                primary: store.isWork() ? Colors.red : Colors.green,
+              ),
             ),
             Text(
               '${this.value} min',
@@ -52,9 +56,10 @@ class InputTime extends StatelessWidget {
                 color: Colors.white,
               ),
               style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(10),
-                  primary: Colors.green),
+                shape: CircleBorder(),
+                padding: EdgeInsets.all(10),
+                primary: store.isWork() ? Colors.red : Colors.green,
+              ),
             ),
           ],
         ),
