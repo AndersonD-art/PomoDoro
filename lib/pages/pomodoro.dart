@@ -28,14 +28,22 @@ class PomoDoro extends StatelessWidget {
                   InputTime(
                     value: store.timeWork,
                     title: 'Trabalho',
-                    inc: store.incrementTimeWork,
-                    dec: store.decrementTimeWork,
+                    inc: store.start && store.isWork()
+                        ? null
+                        : store.incrementTimeWork,
+                    dec: store.start && store.isWork()
+                        ? null
+                        : store.decrementTimeWork,
                   ),
                   InputTime(
                     value: store.timeRest,
                     title: 'Descanso',
-                    inc: store.incrementTimeRest,
-                    dec: store.decrementTimeRest,
+                    inc: store.start && store.isRest()
+                        ? null
+                        : store.incrementTimeRest,
+                    dec: store.start && store.isRest()
+                        ? null
+                        : store.decrementTimeRest,
                   ),
                 ],
               ),
